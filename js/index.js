@@ -1,0 +1,19 @@
+$(function(){
+	$(".box").fullpage({
+		navigation:true,
+		navigationTooltips:["登录百度舆情","领先：数据收集与处理","全面：舆情分析逻辑与架构","专业：专业数据可视化"],
+		afterLoad:function(anchorLink,index){
+			if(index==1){
+				$(".section").attr("id","active");
+			}
+		},
+		onLeave:function(index,nextIndex,dir){
+			if(index==1){
+				$(".section").removeAttr("id");
+			}
+		}
+	});
+	$(".btn").click(function(){
+		$.fn.fullpage.moveSectionDown();
+	})
+})
